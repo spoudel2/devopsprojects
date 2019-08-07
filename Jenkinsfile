@@ -8,12 +8,12 @@ node{
 	}
 	stage('Deploy to Tomcat'){
 		sshagent(['tomcat-dev']) {
-		sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@34.229.249.221:/opt/tomcat9/webapps/'
+		sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@52.87.170.124/opt/tomcat9/webapps/'
 		}
 		
 	}
 	stage('Slack Notification'){
-	slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkinslab', color: '#439FE0', message: 'New Build deployed', teamDomain: 'intelycore8', tokenCredentialId: 'slack-secret'
+	slackSend baseUrl: 'https://hooks.slack.com/services/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', channel: '#jenkinslab', color: '#439FE0', message: 'New Build deployed', teamDomain: 'intelycore8', tokenCredentialId: 'slack-secret'
 	}
 
 }

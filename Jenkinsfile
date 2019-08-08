@@ -1,6 +1,6 @@
 node{
 	stage('SCM Checkout'){
-		git branch: 'slacknotification', url: 'https://github.com/prabhatpankaj/devopsprojects.git'
+		git branch: 'slacknotification', url: 'https://github.com/spoudel2/devopsprojects.git'
 	}
 	stage('Compile-Package'){
 		def mvnHome = tool name: 'maven', type: 'maven'
